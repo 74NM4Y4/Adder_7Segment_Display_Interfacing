@@ -1,6 +1,7 @@
 module Adder_7seg_TB;
 reg [1:0] a;
-reg [1:0] b,Cin;
+reg [1:0] b;
+reg Cin;
 wire [3:0] Out;
 wire [6:0] Display;
 
