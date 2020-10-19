@@ -1,0 +1,19 @@
+module Adder_7seg_Interface(
+    input [1:0]a,
+    input [1:0]b,
+    input Cin,
+    output [3:0] Out,
+    output [6:0] Display
+    );
+    wire Sum1,C1,Sum2,C2;
+    FA FullAdder1(a[0],b[0],Cin,Sum1,C1);
+    FA FullAdder2(a[1],b[1],C1,Sum2,C2);
+    
+    //assign Out ={1'b0,C2,Sum2,Sum1};
+    
+    assign Out[0] = Sum1;
+    assign Out[1] = Sum2;
+    assign Out[2] = C2;
+    assign Out[3] = 1'b0;
+    BCD_to_7Segment SEG (Out,Display);
+endmodule
