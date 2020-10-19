@@ -1,0 +1,86 @@
+module Adder_7seg_TB;
+reg [1:0] a;
+reg [1:0] b,Cin;
+wire [3:0] Out;
+wire [6:0] Display;
+
+Adder_7seg_Interface uut (.a(a),.b(b),.Cin(Cin),.Out(Out),.Display(Display));
+
+initial begin
+//Cin = 0
+a = 2'b00;b=2'b00;Cin=0;     //a =0
+#25;
+a = 2'b00;b=2'b01;Cin=0;
+#25;
+a = 2'b00;b=2'b10;Cin=0;
+#25;
+a = 2'b00;b=2'b11;Cin=0;
+#25;
+
+a = 2'b01;b=2'b00;Cin=0;     //a=1
+#25;
+a = 2'b01;b=2'b01;Cin=0;
+#25;
+a = 2'b01;b=2'b10;Cin=0;
+#25;
+a = 2'b01;b=2'b11;Cin=0;
+#25;
+
+a = 2'b10;b=2'b00;Cin=0;     //a=2
+#25;
+a = 2'b10;b=2'b01;Cin=0;
+#25;
+a = 2'b10;b=2'b10;Cin=0;
+#25;
+a = 2'b10;b=2'b11;Cin=0;
+#25;
+
+a = 2'b11;b=2'b00;Cin=0;      //a=3
+#25;
+a = 2'b11;b=2'b01;Cin=0;
+#25;
+a = 2'b11;b=2'b10;Cin=0;
+#25;
+a = 2'b11;b=2'b11;Cin=0;
+#25;
+
+//Cin = 1
+a = 2'b00;b=2'b00;Cin=1;     //a=0
+#25;
+a = 2'b00;b=2'b01;Cin=1;
+#25;
+a = 2'b00;b=2'b10;Cin=1;
+#25;
+a = 2'b00;b=2'b11;Cin=1;
+#25;
+
+a = 2'b01;b=2'b00;Cin=1;     //a=1
+#25;
+a = 2'b01;b=2'b01;Cin=1;
+#25;
+a = 2'b01;b=2'b10;Cin=1;
+#25;
+a = 2'b01;b=2'b11;Cin=1;
+#25;
+
+a = 2'b10;b=2'b00;Cin=1;      //a=2
+#25;
+a = 2'b10;b=2'b01;Cin=1;
+#25;
+a = 2'b10;b=2'b10;Cin=1;
+#25;
+a = 2'b10;b=2'b11;Cin=1;
+#25;
+
+a = 2'b11;b=2'b00;Cin=1;       //a=3
+#25;
+a = 2'b11;b=2'b01;Cin=1;
+#25;
+a = 2'b11;b=2'b10;Cin=1;
+#25;
+a = 2'b11;b=2'b11;Cin=1;
+#25;
+
+end 
+
+endmodule
